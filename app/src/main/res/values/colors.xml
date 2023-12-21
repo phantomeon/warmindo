@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#DD5353</color>
+    <color name="dark_red">#B73E3E</color>
+    <color name="indomie_red">#ed1b24</color>
+    <color name="indomie_yellow">#FCF250</color>
+    <color name="indomie_green">#4AA45B</color>
+</resources>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "90637175986",
+    "firebase_url": "https://testing1-63fdc-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "testing1-63fdc",
+    "storage_bucket": "testing1-63fdc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90637175986:android:99a61e6716cee155194dab",
+        "android_client_info": {
+          "package_name": "com.android.warmindo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMSB-1P-037djGbpBM3EyWbRjAvGabCUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
