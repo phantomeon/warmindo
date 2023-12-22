@@ -59,6 +59,7 @@ class DashboardActivity : AppCompatActivity() {
 
                     // Intent ke TransactionActivity
                     val intent = Intent(applicationContext, TransactionActivity::class.java)
+                    intent.putExtra("EXTRA_USER_NAME",namaPengguna)
                     startActivity(intent)
 
                     //Menambahkan data ke tabel aktivitas_pengguna

@@ -1,5 +1,6 @@
 package com.android.warmindo
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Paint
 import android.graphics.Typeface
