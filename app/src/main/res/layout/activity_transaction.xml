@@ -7,17 +7,57 @@
     android:background="@color/red"
     tools:context="com.android.warmindo.TransactionActivity">
 
-    <!--  ### LOGO ###  -->
+    <!--  ### LOGO dan PROFIL ###  -->
     <ImageView
         android:id="@+id/image1"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/baseline_account_circle_24"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Selamat bekerja,\n-nama-"
+        android:textColor="@color/white"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/sequel_sans_book_body"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/image1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/image1"
+        app:layout_constraintBottom_toBottomOf="@id/image1" />
 
-    <!--  ### PROFIL ###  -->
+    <ImageView
+        android:id="@+id/logout_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/log_out"
+        android:contentDescription="@string/logout"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="25dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/logout_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/akhiri_shift"
+        android:textColor="@color/white"
+        android:textSize="9dp"
+        android:layout_marginEnd="9dp"
+        android:fontFamily="@font/sequel_sans_bold_head"
+        app:layout_constraintStart_toStartOf="@id/logout_button"
+        app:layout_constraintEnd_toEndOf="@id/logout_button"
+        app:layout_constraintTop_toBottomOf="@id/logout_button"/>
+
+    <!--  ### Waktu shift ###  -->
     <androidx.cardview.widget.CardView
         android:id="@+id/layout1"
         android:layout_width="match_parent"
@@ -36,71 +76,173 @@
                 android:id="@+id/text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Semangat Bekerja,"
+                android:text="Waktu masuk shift hari ini:"
+                android:fontFamily="@font/sequel_sans_book_body"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/text2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Dr. Barney"
+                android:text="18 Desember 2023 pada 17:02"
+                android:fontFamily="@font/sequel_sans_bold_head"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text1" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <!--  ### TRANSAKSI ###  -->
+    <!--  ### TRANSAKSI DASHBOARD ###  -->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_new_transaction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout1"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/layout1">
 
-        <!--  ### NAVBAR ###  -->
-        <LinearLayout
-            android:id="@+id/layout2"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:weightSum="2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/layout3">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_gravity="center_vertical"
-                android:background="@color/white"
-                android:layout_weight="1"
-                android:text="ON GOING"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="COMPLETED"/>
-        </LinearLayout>
+        <!-- guideline -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="187dp" />
 
-        <!--  ### TRANSAKSI ON GOING ###  -->
-        <LinearLayout
-            android:id="@+id/layout3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:padding="30dp"
+        <!-- Judul dan ikon untuk pesanan sedang dimasak -->
+        <ImageView
+            android:id="@+id/cooking_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cooking"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Aku"/>
-            </ScrollView>
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_center"/>
+
+        <TextView
+            android:id="@+id/cooking_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Pesanan sedang dimasak"
+            android:textAlignment="center"
+            android:fontFamily="@font/sequel_sans_bold_head"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cooking_icon"
+            app:layout_constraintEnd_toStartOf="@id/guideline_center" />
+
+        <TextView
+            android:id="@+id/cooking_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="7"
+            android:textSize="34sp"
+            android:fontFamily="@font/sequel_sans_bold_head"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/cooking_icon"
+            app:layout_constraintTop_toBottomOf="@id/cooking_label"
+            app:layout_constraintEnd_toEndOf="@id/cooking_icon"/>
+
+        <!-- Judul dan ikon untuk pesanan selesai dimasak -->
+        <ImageView
+            android:id="@+id/cooked_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cooked"
+            app:layout_constraintStart_toStartOf="@id/guideline_center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cooked_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pesanan selesai dimasak"
+            android:textAlignment="center"
+            android:fontFamily="@font/sequel_sans_bold_head"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/guideline_center"
+            app:layout_constraintTop_toBottomOf="@id/cooked_icon"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/cooked_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="15"
+            android:textSize="34sp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sequel_sans_bold_head"
+            app:layout_constraintStart_toStartOf="@id/cooked_icon"
+            app:layout_constraintTop_toBottomOf="@id/cooked_label"
+            app:layout_constraintEnd_toEndOf="@id/cooked_icon"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--  ### NAVBAR TRANSAKSI ###  -->
+    <LinearLayout
+        android:id="@+id/layout_navbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_new_transaction"
+        android:background="@color/red"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/textView_cooking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sedang dimasak"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/selector_cooking"
+            android:fontFamily="@font/sequel_sans_bold_head"
+            android:textColor="@drawable/text_color_selector"
+            android:padding="16dp" />
+
+        <TextView
+            android:id="@+id/textView_served"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tersaji"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/selector_served"
+            android:fontFamily="@font/sequel_sans_bold_head"
+            android:textColor="@drawable/text_color_selector"
+            android:padding="16dp" />
+    </LinearLayout>
+
+    <!-- recycler view sedang dimasak -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_cooking"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/layout_navbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_order" />
+
+    <!-- RecyclerView for "Tersaji" -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_served"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/layout_navbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_order" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

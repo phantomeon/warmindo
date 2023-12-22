@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">warmindo</string>
+    <string name="app_name">Warmindo Inspirasi Indonesia</string>
+    <string name="welcome_message">Selamat datang, %1$s</string>
+    <string name="logout">Logout</string>
+    <string name="akhiri_shift">akhiri shift</string>
 </resources>
