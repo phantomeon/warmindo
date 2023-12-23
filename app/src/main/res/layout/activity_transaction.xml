@@ -21,7 +21,7 @@
         android:id="@+id/welcome_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Selamat bekerja,\n-nama-"
+        android:text=""
         android:textColor="@color/white"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/sequel_sans_book_body"
@@ -85,7 +85,7 @@
                 android:id="@+id/text2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="18 Desember 2023 pada 17:02"
+                android:text=""
                 android:fontFamily="@font/sequel_sans_bold_head"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text1" />
@@ -112,76 +112,9 @@
             app:layout_constraintGuide_begin="187dp" />
 
         <!-- Judul dan ikon untuk pesanan sedang dimasak -->
-        <ImageView
-            android:id="@+id/cooking_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cooking"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/guideline_center"/>
-
-        <TextView
-            android:id="@+id/cooking_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Pesanan sedang dimasak"
-            android:textAlignment="center"
-            android:fontFamily="@font/sequel_sans_bold_head"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cooking_icon"
-            app:layout_constraintEnd_toStartOf="@id/guideline_center" />
-
-        <TextView
-            android:id="@+id/cooking_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="7"
-            android:textSize="34sp"
-            android:fontFamily="@font/sequel_sans_bold_head"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@id/cooking_icon"
-            app:layout_constraintTop_toBottomOf="@id/cooking_label"
-            app:layout_constraintEnd_toEndOf="@id/cooking_icon"/>
 
         <!-- Judul dan ikon untuk pesanan selesai dimasak -->
-        <ImageView
-            android:id="@+id/cooked_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cooked"
-            app:layout_constraintStart_toStartOf="@id/guideline_center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/cooked_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pesanan selesai dimasak"
-            android:textAlignment="center"
-            android:fontFamily="@font/sequel_sans_bold_head"
-            android:textColor="@color/white"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="@id/guideline_center"
-            app:layout_constraintTop_toBottomOf="@id/cooked_icon"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <TextView
-            android:id="@+id/cooked_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="15"
-            android:textSize="34sp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/sequel_sans_bold_head"
-            app:layout_constraintStart_toStartOf="@id/cooked_icon"
-            app:layout_constraintTop_toBottomOf="@id/cooked_label"
-            app:layout_constraintEnd_toEndOf="@id/cooked_icon"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--  ### NAVBAR TRANSAKSI ###  -->
@@ -198,27 +131,16 @@
 
         <TextView
             android:id="@+id/textView_cooking"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sedang dimasak"
             android:layout_weight="1"
-            android:gravity="center"
             android:background="@drawable/selector_cooking"
             android:fontFamily="@font/sequel_sans_bold_head"
-            android:textColor="@drawable/text_color_selector"
-            android:padding="16dp" />
-
-        <TextView
-            android:id="@+id/textView_served"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Tersaji"
-            android:layout_weight="1"
             android:gravity="center"
-            android:background="@drawable/selector_served"
-            android:fontFamily="@font/sequel_sans_bold_head"
-            android:textColor="@drawable/text_color_selector"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:text="Sedang Dimasak"
+            android:textColor="@drawable/text_color_selector" />
+
     </LinearLayout>
 
     <!-- recycler view sedang dimasak -->
@@ -233,16 +155,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_order" />
 
-    <!-- RecyclerView for "Tersaji" -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_served"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/layout_navbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_order" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

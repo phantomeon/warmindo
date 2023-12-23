@@ -7,7 +7,6 @@
     android:elevation="6dp"
     app:cardUseCompatPadding="true">
 
-    <!-- Contoh TextView yang bisa mewakili nama pesanan atau detail lain -->
     <RelativeLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -17,34 +16,22 @@
             android:id="@+id/namapelanggan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nama Pelanggan"
+            android:text="Nama Menu"
             android:textStyle="bold"
             android:textSize="18sp"
             android:fontFamily="@font/sequel_sans_bold_head"
             android:layout_marginLeft="10dp"/>
 
         <TextView
-            android:id="@+id/kodemeja"
+            android:id="@+id/jumlah"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kode Meja"
+            android:text="Jumlah: x"
             android:textSize="18sp"
             android:fontFamily="@font/sequel_sans_bold_head"
             android:layout_below="@id/namapelanggan"
             android:layout_marginLeft="10dp"/>
 
-        <TextView
-            android:id="@+id/tanggal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tanggal"
-            android:textSize="18sp"
-            android:fontFamily="@font/sequel_sans_bold_head"
-            android:layout_below="@id/kodemeja"
-            android:layout_marginLeft="10dp"/>
-
     </RelativeLayout>
-
-    <!-- Tambahkan elemen lain yang diperlukan untuk desain item Anda -->
 
 </androidx.cardview.widget.CardView>
